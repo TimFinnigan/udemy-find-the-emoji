@@ -6,19 +6,21 @@ import shuffleArray from './shuffle-array';
 
 const Grid = () => {
 	const [total, setTotal] = useState(6);
+	const [target, setTarget] = useState();
 
 	const init = () => {
 		// shuffle array
 		const shuffled = shuffleArray(emoji.names);
 		let arr = shuffled.slice(0, total);
-		console.log(arr);
+		let randomIndex = Math.floor(Math.random() * arr.length);
+		setTarget(arr[randomIndex]);
 	};
 	useEffect(() => {
 		init();
 	}, []);
 	return (
 		<View>
-			<Text>Grid here</Text>
+			<Text>{target && emoji.getUnicode(target)}</Text>
 		</View>
 	);
 };
