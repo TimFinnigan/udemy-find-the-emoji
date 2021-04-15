@@ -3,6 +3,7 @@ import { View, Text, Pressable } from 'react-native';
 
 import emoji from 'emoji-dictionary';
 import shuffleArray from './shuffle-array';
+import styles from './styles';
 
 const Grid = () => {
 	const [total, setTotal] = useState(6);
@@ -20,7 +21,7 @@ const Grid = () => {
 	}, []);
 
 	return (
-		<View>
+		<View style={styles.startContainer}>
 			<Text>Find the emoji!</Text>
 			<Text>Level 1</Text>
 			<Text>{target && emoji.getUnicode(target)}</Text>
