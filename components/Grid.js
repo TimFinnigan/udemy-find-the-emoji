@@ -22,11 +22,13 @@ const Grid = () => {
 
 	return (
 		<View style={styles.startContainer}>
-			<Text>Find the emoji!</Text>
-			<Text>Level 1</Text>
-			<Text>{target && emoji.getUnicode(target)}</Text>
-			<Pressable>
-				<Text>Start</Text>
+			<Text style={styles.findText}>Find the emoji!</Text>
+			<Text style={styles.level}>Level 1</Text>
+			<Text style={styles.target}>
+				{target && emoji.getUnicode(target)}
+			</Text>
+			<Pressable style={styles.startButton}>
+				<Text style={styles.startButtonText}>Start</Text>
 			</Pressable>
 		</View>
 	);
